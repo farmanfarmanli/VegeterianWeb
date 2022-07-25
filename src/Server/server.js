@@ -11,3 +11,9 @@ export const getSingleData = async (id) =>{
     return data
 }
 
+
+export const getCategoryData = async (name) =>{
+    const res = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`)
+    const data = await res.json()
+    return data.results
+}

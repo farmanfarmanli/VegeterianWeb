@@ -5,6 +5,7 @@ import "swiper/css/bundle";
 import {Routes,Route} from "react-router-dom"
 import Details from "./Pages/Details";
 import HomeLayout from "./Pages/HomeLayout";
+import Category from "./Pages/Category";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Route path="/" element={<HomeLayout />}>
         <Route index={true} element={<Home/>}/>
         <Route path="/details/:id" element={<Details/>}/>
+        <Route path="/category/:name" element={<Category/>}/>
       </Route>
     </Routes>
    </div>
