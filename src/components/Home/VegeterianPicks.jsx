@@ -22,14 +22,26 @@ const VegeterianPicks = () => {
   },[])
   return (
     <div className='mt-24 flex gap-6 flex-col'> 
-        <h2 className='font-bold text-lg font-montserrat'>Our Vegeterian Picks</h2>
+        <h2 className='font-bold text-lg font-montserrat md:text-2xl'>Our Vegeterian Picks</h2>
         <Swiper
           slidesPerView={3}
           spaceBetween={30}
           className="mySwiper"
+          breakpoints={{
+            200: {
+              slidesPerView:1,
+              spaceBetween:10
+            },
+            768:{
+              slidesPerView:2,
+            },
+            1200:{
+              slidesPerView:3
+            }
+          }}
         >
           {
-            data.map(item => (
+            data?.map(item => (
               <SwiperSlide key={item.id}><ListBox text="vegeterian" id={item.id} image={item.image} desc={item.creditsText} /></SwiperSlide>
             ))
           }

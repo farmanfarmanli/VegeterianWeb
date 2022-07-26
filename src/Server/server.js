@@ -17,3 +17,10 @@ export const getCategoryData = async (name) =>{
     const data = await res.json()
     return data.results
 }
+
+
+export const getSearchData = async (search) =>{
+    const res = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${search }`)
+    const data = await res.json()
+    return data.results
+}
